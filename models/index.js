@@ -10,4 +10,8 @@ Comments.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
+User.hasOne(Teams, {
+  foreignKey: 'teams_id',
+});
+
 module.exports = { User, Comments, Teams };
