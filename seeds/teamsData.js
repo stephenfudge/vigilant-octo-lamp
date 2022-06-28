@@ -291,3 +291,9 @@ const teamData = [
         group: "H"
     },    
 ]
+
+
+// setting variable to export data
+const seedTeams = () => Team.bulkCreate(teamData);
+
+module.exports = seedTeams;
