@@ -22,6 +22,14 @@ Comment.init({
             key: 'id'
         }
     },
+    country_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'teams',
+            key: 'id'
+        }
+    },
 // comment text column
     comment_text: {
         type: DataTypes.STRING,
