@@ -35,13 +35,13 @@ User.init(
         len: [6],
       },
      },
-     team: {
+     my_team: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'teams',
         key: 'id'
-      },
+      }
      },
   },
   {

@@ -1,5 +1,5 @@
 // import Comment model
-const { Comment } = require('../models');
+const  Comment  = require('../models/Comments');
 
 const commentData = [{
         user_id: 1,
