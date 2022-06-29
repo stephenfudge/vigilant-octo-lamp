@@ -1,96 +1,138 @@
-<h2>Group A</h2>
-{{#each groupA as |team|}}
-<div ="card" style="width: 18rem;">
-  <div class="card-header">
+<div class="container">
+  <div class="row ">
+    <div class="col group-card">
+      <h2 class="text-center" class="text-center">Group A</h2>
+      {{#each groupA as |team|}}
+      <div="card" style="width: 18rem;">
+        
+        <ul class="list-group list-group-flush">
+          <a href="/country/{{team.id}}">
+            <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}">
+              {{team.name}}
+            </li>
+          </a>
+        </ul>
+        {{/each}}
+    </div>
+
+
+
+    <div class="col group-card">
+      <h2 class="text-center" class="text-center">Group B</h2>
+      {{#each groupB as |team|}}
+      <div="card" style="width: 18rem;">
+        
+        <ul class="list-group list-group-flush">
+          <a href="/country/{{team.id}}">
+            <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}">
+              {{team.name}}
+            </li>
+          </a>
+        </ul>
+        {{/each}}
+    </div>
+
+
+    <div class="col group-card">
+      <h2 class="text-center" class="text-center">Group C</h2>
+      {{#each groupC as |team|}}
+      <div="card" style="width: 18rem;">
+        
+        <ul class="list-group list-group-flush">
+          <a href="/country/{{team.id}}">
+            <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}">
+              {{team.name}}
+            </li>
+          </a>
+        </ul>
+        {{/each}}
+    </div>
+
+
+    <div class="col group-card">
+      <h2 class="text-center">Group D</h2>
+      {{#each groupD as |team|}}
+      <div="card" style="width: 18rem;">
+        
+        <ul class="list-group list-group-flush">
+          <a href="/country/{{team.id}}">
+            <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}">
+              {{team.name}}
+            </li>
+          </a>
+        </ul>
+        {{/each}}
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <a href="/country/{{team.id}}">
-        <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}"> {{team.name}}</li>
-    </a>  
-  </ul>
-</div>
-{{/each}}
-<h2>Group B</h2>
-{{#each groupB as |team|}}
-<div ="card" style="width: 18rem;">
-  <div class="card-header">
+
+
+  <div class="row">
+    <div class="col group-card">
+      <h2 class="text-center">Group E</h2>
+      {{#each groupE as |team|}}
+      <div="card" style="width: 18rem;">
+        
+        <ul class="list-group list-group-flush">
+          <a href="/country/{{team.id}}">
+            <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}">
+              {{team.name}}
+            </li>
+          </a>
+        </ul>
+        {{/each}}
+    </div>
+
+
+
+
+
+
+    <div class="col group-card">
+      <h2 class="text-center">Group F</h2>
+      {{#each groupF as |team|}}
+      <div="card" style="width: 18rem;">
+        
+        <ul class="list-group list-group-flush">
+          <a href="/country/{{team.id}}">
+            <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}">
+              {{team.name}}
+            </li>
+          </a>
+        </ul>
+        {{/each}}
+    </div>
+
+
+    <div class="col group-card">
+      <h2 class="text-center">Group G</h2>
+      {{#each groupG as |team|}}
+      <div="card" style="width: 18rem;">
+        
+        <ul class="list-group list-group-flush">
+          <a href="/country/{{team.id}}">
+            <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}">
+              {{team.name}}
+            </li>
+          </a>
+        </ul>
+        {{/each}}
+    </div>
+
+
+    <div class="col group-card">
+      <h2 class="text-center">Group H</h2>
+      {{#each groupH as |team|}}
+      <div="card" style="width: 18rem;">
+        
+        <ul class="list-group list-group-flush">
+          <a href="/country/{{team.id}}">
+            <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}">
+              {{team.name}}
+            </li>
+          </a>
+        </ul>
+        {{/each}}
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <a href="/country/{{team.id}}">
-        <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}"> {{team.name}}</li>
-    </a>  
-    </ul>
 </div>
-{{/each}}
-<h2>Group C</h2>
-{{#each groupC as |team|}}
-<div ="card" style="width: 18rem;">
-  <div class="card-header">
-  </div>
-  <ul class="list-group list-group-flush">
-    <a href="/country/{{team.id}}">
-        <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}"> {{team.name}}</li>
-    </a>  
- </ul>
 </div>
-{{/each}}
-<h2>Group D</h2>
-{{#each groupD as |team|}}
-<div ="card" style="width: 18rem;">
-  <div class="card-header">
-  </div>
-  <ul class="list-group list-group-flush">
-    <a href="/country/{{team.id}}">
-        <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}"> {{team.name}}</li>
-    </a>
-  </ul>
-</div>
-{{/each}}
-<h2>Group E</h2>
-{{#each groupE as |team|}}
-<div ="card" style="width: 18rem;">
-  <div class="card-header">
-  </div>
-  <ul class="list-group list-group-flush">
-    <a href="/country/{{team.id}}">
-        <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}"> {{team.name}}</li>
-    </a>  
-    </ul>
-</div>
-{{/each}}
-<h2>Group F</h2>
-{{#each groupF as |team|}}
-<div ="card" style="width: 18rem;">
-  <div class="card-header">
-  </div>
-  <ul class="list-group list-group-flush">
-    <a href="/country/{{team.id}}">
-        <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}"> {{team.name}}</li>
-    </a> 
-  </ul>
-</div>
-{{/each}}
-<h2>Group G</h2>
-{{#each groupG as |team|}}
-<div ="card" style="width: 18rem;">
-  <div class="card-header">
-  </div>
-  <ul class="list-group list-group-flush">
-    <a href="/country/{{team.id}}">
-        <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}"> {{team.name}}</li>
-    </a>  
-  </ul>
-</div>
-{{/each}}
-<h2>Group H</h2>
-{{#each groupH as |team|}}
-<div ="card" style="width: 18rem;">
-  <div class="card-header">
-  </div>
-  <ul class="list-group list-group-flush">
-    <a href="/country/{{team.id}}">
-        <li class="list-group-item"> <img src="/images/{{team.image}}" class="flag" alt="{{team.name}}"> {{team.name}}</li>
-    </a> 
-   </ul>
-</div>
-{{/each}}
