@@ -44,32 +44,31 @@ router.get('/', async (req, res) => {
       res.render('homepage', { teams, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH});
     });
 
-    // Get one blog 
+    // Get one country 
 router.get('/country/:id', async (req, res) => {
   try {
     const dbTeamData = await Teams.findByPk(req.params.id,
-      //  {
-    //   include: [
-    //     {
-    //       model: Comment,
-    //       attributes: [
-    //         'id',
-    //         'comment_text',
-    //         'user_id',
-    //         'country_id',
-    //         'createdAt',
-    //       ],
-    //     },
-    //     {
-    //       model: User,
-    //       atrributes: [
-    //         'username',
-    //         'id',
-    //         'my_team',
-    //       ]
-    //     }
-    //   ],
-    // }
+       {
+      include: [
+        // {
+        //   model: Comment,
+        //   attributes: [
+        //     'id',
+        //     'comment_text',
+        //     'user_id',
+        //     'country_id',
+        //   ],
+        // },
+        {
+          model: User,
+          atrributes: [
+            'username',
+            'id',
+            'my_team',
+          ]
+        }
+      ],
+    }
     );
 
     const team = dbTeamData.get({ plain: true });
