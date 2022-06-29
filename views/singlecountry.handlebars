@@ -1,8 +1,14 @@
 <div class="card">
-    <h5 class="card-header">{{team.image}} {{createdAt}}</h5>
+    <h5 class="card-header">{{team.name}}</h5>
     <div class="card-body">
-      <h5 class="card-title">{{blog.user.user_name}}</h5>
-      <p class="card-text">{{blog.contents}}</p>
-
+    <img src="/images/{{team.image}}" alt="{{team.name}}">
+      <h5 class="card-title">{{team.name}}</h5>
+      <ul>
+        <li>Nations Capital: {{team.capital}}</li>
+        <li>World Ranking: {{team.fifa_ranking}}</li>
+        <li>Group: {{team.group_letter}}</li>
+        <li>World Cup Triumphs: {{team.times_won}}</li>
+        <li>Star Player: {{team.star_player}}</li>
+      </ul>
   </div>
   </div>
