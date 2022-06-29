@@ -1,18 +1,22 @@
 const router = require('express').Router();
-// const Blog  = require('../models/blog');
-// const User = require("../models/user");
-// const Comment = require("../models/comment")
+const Comment  = require('../models/Comments');
+const User = require("../models/User");
+const Teams = require("../models/Teams");
 
 const bcrypt = require('bcrypt');
 
-const { Teams, User, Comments} = require("../models")
+
 const withAuth = require('../utils/auth')
 
 
-
-
+router.get('/', async (req, res)  => {
+    try {
+        const teamData = await Teams.findAll();
+        res.status(200).json(teamData);
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
 
 
 module.exports = router;
-
-
