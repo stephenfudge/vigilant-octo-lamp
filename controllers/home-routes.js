@@ -5,7 +5,7 @@ const router = require('express').Router();
 
 const bcrypt = require('bcrypt');
 
-const { Blog, User, Comment} = require("../models")
+const { Teams, User, Comments} = require("../models")
 const withAuth = require('../utils/auth')
 
 
