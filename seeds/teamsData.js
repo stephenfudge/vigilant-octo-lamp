@@ -16,7 +16,7 @@ const teamData = [
         capital: "Quito",
         times_won: 0,
         star_player: "Enner Valencia",
-        image: "Ecuador.jpg",
+        image: "Ecuador.png",
         group_letter: "A"
     },
     {
@@ -278,7 +278,7 @@ const teamData = [
         capital: "Montevideo",
         times_won: 2,
         star_player: "Luis Suarez",
-        image: "Uruguay.jpg",
+        image: "Uruguay.png",
         group_letter: "H"
     },   
     {
