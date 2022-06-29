@@ -24,7 +24,7 @@ Teams.init({
         allowNull: false,
         },
     // what   
-        group: {
+        group_letter: {
         type: DataTypes.STRING,
         allowNull: false,
        },
