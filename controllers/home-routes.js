@@ -17,32 +17,74 @@ router.get('/', async (req, res) => {
       console.log('==================')
       console.log(teams)
       const groupA = teams.filter( group =>{
-        return group.group === 'A';
+        return group.group_letter === 'A';
       });
       const groupB = teams.filter( group =>{
-        return group.group === 'B';
+        return group.group_letter === 'B';
       });
       const groupC = teams.filter( group =>{
-        return group.group === 'C';
+        return group.group_letter === 'C';
       });
       const groupD = teams.filter( group =>{
-        return group.group === 'D';
+        return group.group_letter === 'D';
       });
       const groupE = teams.filter( group =>{
-        return group.group === 'E';
+        return group.group_letter === 'E';
       });
       const groupF = teams.filter( group =>{
-        return group.group === 'F';
+        return group.group_letter === 'F';
       });
       const groupG = teams.filter( group =>{
-        return group.group === 'G';
+        return group.group_letter === 'G';
       });
       const groupH = teams.filter( group =>{
-        return group.group === 'H';
+        return group.group_letter === 'H';
       });
       console.log(groupA)
       res.render('homepage', { teams, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH});
     });
+
+    // Get one blog 
+router.get('/country/:id', async (req, res) => {
+  try {
+    const dbTeamData = await Teams.findByPk(req.params.id,
+      //  {
+    //   include: [
+    //     {
+    //       model: Comment,
+    //       attributes: [
+    //         'id',
+    //         'comment_text',
+    //         'user_id',
+    //         'country_id',
+    //         'createdAt',
+    //       ],
+    //     },
+    //     {
+    //       model: User,
+    //       atrributes: [
+    //         'username',
+    //         'id',
+    //         'my_team',
+    //       ]
+    //     }
+    //   ],
+    // }
+    );
+
+    const team = dbTeamData.get({ plain: true });
+    console.log("=====================================================================")
+    // // console.log(blog)
+    // // console.log(blog.comments)
+    // console.log(blog.user)
+    // console.log(blog.user.user_name)
+    // const comments = blog.comments
+    res.render('singlecountry', { team, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 
 
