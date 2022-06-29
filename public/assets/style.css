@@ -1,3 +1,12 @@
 #nav-bar {
     background-color: #790628;
 }
+
+#latest-news-ribbon{
+    width: max-content;
+}
+
+
+#latest-news{
+    background-color: #790628;
+}
