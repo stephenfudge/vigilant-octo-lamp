@@ -8,7 +8,7 @@ const teamData = [
         times_won: 0,
         star_player: "Hassan Al-Haydos",
         image: "Qatar.png",
-        group: "A"
+        group_letter: "A"
     },
     {
         name: "Ecuador",
@@ -16,8 +16,8 @@ const teamData = [
         capital: "Quito",
         times_won: 0,
         star_player: "Enner Valencia",
-        image: "Ecuador.jpg",
-        group: "A"
+        image: "Ecuador.png",
+        group_letter: "A"
     },
     {
         name: "Senegal",
@@ -26,7 +26,7 @@ const teamData = [
         times_won: 0,
         star_player: "Sadio Mane",
         image: "Senegal.png",
-        group: "A"
+        group_letter: "A"
     },
     {
         name: "Netherlands",
@@ -35,7 +35,7 @@ const teamData = [
         times_won: 0,
         star_player: "Virgil Van Dijk",
         image: "Netherlands.png",
-        group: "A"
+        group_letter: "A"
     },
     {
         name: "England",
@@ -44,7 +44,7 @@ const teamData = [
         times_won: 1,
         star_player: "Harry Kane",
         image: "England.jpg",
-        group: "B"
+        group_letter: "B"
     },
     {
         name: "Iran",
@@ -53,7 +53,7 @@ const teamData = [
         times_won: 0,
         star_player: "Mehdi Taremi",
         image: "Iran.png",
-        group: "B"
+        group_letter: "B"
     },
     {
         name: "USA",
@@ -62,7 +62,7 @@ const teamData = [
         times_won: 0,
         star_player: "Christian Pulisic",
         image: "USA.png",
-        group: "B"
+        group_letter: "B"
     },
     {
         name: "Wales",
@@ -71,7 +71,7 @@ const teamData = [
         times_won: 0,
         star_player: "Gareth Bale",
         image: "Wales.jpg",
-        group: "B"
+        group_letter: "B"
     },
     {
         name: "Argentina",
@@ -80,7 +80,7 @@ const teamData = [
         times_won: 2,
         star_player: "Lionel Messi",
         image: "Argentina.jpg",
-        group: "C"
+        group_letter: "C"
     },
     {
         name: "Saudi Arabia",
@@ -89,7 +89,7 @@ const teamData = [
         times_won: 0,
         star_player: "Salem Al-Dawsari",
         image: "Saudi-Arabia.png",
-        group: "C"
+        group_letter: "C"
     },
     {
         name: "Mexico",
@@ -98,7 +98,7 @@ const teamData = [
         times_won: 0,
         star_player: "Javier Hernandez",
         image: "Mexico.png",
-        group: "C"
+        group_letter: "C"
     },
     {
         name: "Poland",
@@ -107,7 +107,7 @@ const teamData = [
         times_won: 0,
         star_player: "Robert Lewandowski",
         image: "Poland.png",
-        group: "C"
+        group_letter: "C"
     },
     {
         name: "France",
@@ -116,7 +116,7 @@ const teamData = [
         times_won: 2,
         star_player: "Kylian Mbappe",
         image: "France.png",
-        group: "D"
+        group_letter: "D"
     },
     {
         name: "Denmark",
@@ -125,7 +125,7 @@ const teamData = [
         times_won: 0,
         star_player: "Christian Eriksen",
         image: "Denmark.png",
-        group: "D"
+        group_letter: "D"
     },
     {
         name: "Tunisia",
@@ -134,7 +134,7 @@ const teamData = [
         times_won: 0,
         star_player: "Wahbi Khazri",
         image: "Tunisia.png",
-        group: "D"
+        group_letter: "D"
     },
     {
         name: "Australia",
@@ -143,7 +143,7 @@ const teamData = [
         times_won: 0,
         star_player: "Mathew Ryan",
         image: "Australia.jpg",
-        group: "D"
+        group_letter: "D"
     },
     {
         name: "Spain",
@@ -152,7 +152,7 @@ const teamData = [
         times_won: 1,
         star_player: "Sergio Ramos",
         image: "Spain.png",
-        group: "E"
+        group_letter: "E"
     },
     {
         name: "Germany",
@@ -161,7 +161,7 @@ const teamData = [
         times_won: 4,
         star_player: "Serge Gnabry",
         image: "Germany.png",
-        group: "E"
+        group_letter: "E"
     },
     {
         name: "Japan",
@@ -170,7 +170,7 @@ const teamData = [
         times_won: 0,
         star_player: "Takumi Minamino",
         image: "Japan.png",
-        group: "E"
+        group_letter: "E"
     },
     {
         name: "Costa Rica",
@@ -179,7 +179,7 @@ const teamData = [
         times_won: 0,
         star_player: "Keylor Navas",
         image: "Costa-Rica.png",
-        group: "E"
+        group_letter: "E"
     },
     {
         name: "Belgium",
@@ -188,7 +188,7 @@ const teamData = [
         times_won: 0,
         star_player: "Kevin De Bruyne",
         image: "Belgium.jpg",
-        group: "F"
+        group_letter: "F"
     },
     {
         name: "Canada",
@@ -197,7 +197,7 @@ const teamData = [
         times_won: 0,
         star_player: "Alphonso Davies",
         image: "Canada.png",
-        group: "F"
+        group_letter: "F"
     },
     {
         name: "Morocco",
@@ -206,7 +206,7 @@ const teamData = [
         times_won: 0,
         star_player: "Hakim Ziyech",
         image: "Morocco.png",
-        group: "F"
+        group_letter: "F"
     },
     {
         name: "Croatia",
@@ -215,7 +215,7 @@ const teamData = [
         times_won: 0,
         star_player: "Luka Modric",
         image: "Croatia.png",
-        group: "F"
+        group_letter: "F"
     },
     {
         name: "Brazil",
@@ -224,7 +224,7 @@ const teamData = [
         times_won: 5,
         star_player: "Neymar",
         image: "Brazil.png",
-        group: "G"
+        group_letter: "G"
     },
     {
         name: "Serbia",
@@ -233,7 +233,7 @@ const teamData = [
         times_won: 0,
         star_player: "Dusan Vlahovic",
         image: "Serbia.png",
-        group: "G"
+        group_letter: "G"
     },
 
     {
@@ -243,7 +243,7 @@ const teamData = [
         times_won: 0,
         star_player: "Granit Xhaka",
         image: "Switzerland.png",
-        group: "G"
+        group_letter: "G"
     },    
     {
         name: "Cameroon",
@@ -252,7 +252,7 @@ const teamData = [
         times_won: 0,
         star_player: "Joel Matip",
         image: "Cameroon.png",
-        group: "G"
+        group_letter: "G"
     },    
     {
         name: "Portugal",
@@ -261,7 +261,7 @@ const teamData = [
         times_won: 0,
         star_player: "Cristiano Ronaldo",
         image: "Portugal.png",
-        group: "H"
+        group_letter: "H"
     },    
     {
         name: "Ghana",
@@ -270,7 +270,7 @@ const teamData = [
         times_won: 0,
         star_player: "Thomas Partey",
         image: "Ghana.png",
-        group: "H"
+        group_letter: "H"
     },    
     {
         name: "Uruguay",
@@ -278,8 +278,8 @@ const teamData = [
         capital: "Montevideo",
         times_won: 2,
         star_player: "Luis Suarez",
-        image: "Uruguay.jpg",
-        group: "H"
+        image: "Uruguay.png",
+        group_letter: "H"
     },   
     {
         name: "South Korea",
@@ -288,6 +288,12 @@ const teamData = [
         times_won: 0,
         star_player: "Son Heung-Min",
         image: "South-Korea.png",
-        group: "H"
+        group_letter: "H"
     },    
 ]
+
+
+// setting variable to export data
+const seedTeams = () => Team.bulkCreate(teamData);
+
+module.exports = seedTeams;
