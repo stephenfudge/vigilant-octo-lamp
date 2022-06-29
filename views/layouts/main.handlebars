@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Schedule</a>
@@ -66,10 +66,14 @@
                     </li>
                 </ul>
                 <form class="container-fluid">
-
-                    <button type="button" class="btn btn-primary" id="login-btn">Login / SignUp</button>
-
-
+                     {{#if logged_in}}
+        
+                   <button class="no-button" id="logout">logout</button>
+                       {{else}}
+                   <a href="/login" class="text-white"><button type="button" class="btn btn-primary" id="login-btn">Login</a></button>
+                    <a href="/signup" class="text-white"><button type="button" class="btn btn-primary" id="signup-btn">SignUp</a></button>
+                  {{/if}}
+                   
                 </form>
             </div>
         </div>
