@@ -1,4 +1,4 @@
-const Team = require('../models/teams.js')
+const Teams = require('../models/teams.js')
 
 const teamData = [
     {
@@ -294,6 +294,6 @@ const teamData = [
 
 
 // setting variable to export data
-const seedTeams = () => Team.bulkCreate(teamData);
+const seedTeams = () => Teams.bulkCreate(teamData);
 
 module.exports = seedTeams;

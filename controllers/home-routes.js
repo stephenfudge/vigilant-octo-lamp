@@ -1,7 +1,9 @@
 const router = require('express').Router();
-const Comment  = require('../models/Comments');
-const User = require("../models/User");
-const Teams = require("../models/Teams");
+// const Comment  = require('../models/comments');
+// const User = require("../models/user");
+// const Teams = require("../models/teams");
+
+const { Comment, User, Teams} = require('../models');
 
 const bcrypt = require('bcrypt');
 
@@ -65,27 +67,28 @@ router.get('/', async (req, res) => {
 router.get('/country/:id', async (req, res) => {
   try {
     const dbTeamData = await Teams.findByPk(req.params.id,
-      //  {
-      // include: [
+       {
+      include: [
+        {
+          model: Comment,
+          // attributes: [
+          //   // 'id',
+          //   // 'comment_text',
+          //   // 'user_id',
+          //   // 'country_id',
+          // ],
+        },
         // {
-        //   model: Comment,
-        //   attributes: [
-        //     'id',
-        //     'comment_text',
-        //     'user_id',
-        //     'country_id',
-        //   ],
-        // },
-    //     {
-    //       model: User,
-    //       atrributes: [
-    //         'username',
-    //         'id',
-    //         'my_team',
-    //       ]
-    //     }
-    //   ],
-    // }
+        //   model: User,
+        //   // atrributes: [
+        //   //   // 'username',
+        //   //   // 'id',
+        //   //   // 'my_team',
+        //   // ]
+        // }
+      ],
+    }
+
     );
 
     const team = dbTeamData.get({ plain: true });
@@ -134,6 +137,7 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.logged_in = true;
+      req.session.user_id = dbUserData.id;
 
       res.status(200).json(dbUserData);
     });
@@ -171,6 +175,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.logged_in = true;
+      req.session.user_id = dbUserData.id;
 
       res
         .status(200)

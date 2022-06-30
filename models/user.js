@@ -35,7 +35,7 @@ User.init(
         len: [6],
       },
      },
-     my_team: {
+     teams_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: 2,

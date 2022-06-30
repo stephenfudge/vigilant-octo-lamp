@@ -20,6 +20,23 @@ const signupFormHandler = async (event) => {
     }
   };
 
+  function sendEmail() {
+    Email.send({
+        Host : "smtp.mailtrap.io",
+        Username : "worldcuptestsite123@gmail.com",
+        Password : "W0rldCup567",
+        To : 'joelcronin@example.com',
+        From : "worldcuptestsite123@gmail.com",
+        Subject : "Test email",
+        Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
+    }).then(
+      message => alert(message)
+      
+    );
+    console.log("==================================================================================================================================")
+    }
+
   document
   .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+  .addEventListener('submit', signupFormHandler, sendEmail);
+
