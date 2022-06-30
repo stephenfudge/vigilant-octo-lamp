@@ -1,29 +1,30 @@
 const User = require('./user');
-const Comments = require('./comments');
+const Comment = require('./comments');
 const Teams = require('./teams');
 
-User.hasMany(Comments, {
-  foreignKey: 'user_id',
+// User.hasMany(Comments, {
+//   foreignKey: 'user_id',
+// });
+
+// Comments.belongsTo(User, {
+//   foreignKey: 'user_id',
+// });
+
+// Teams.hasMany(User, {
+//   foreignKey: 'team_id',
+// });
+
+// User.belongsTo(Teams, {
+//   foreignKey: 'team_id',
+// });
+
+Teams.hasMany(Comment, {
+  foreignKey: 'teams_id',
+  onDelete: 'CASCADE',
 });
 
-Comments.belongsTo(User, {
-  foreignKey: 'user_id',
+Comment.belongsTo(Teams, {
+  foreignKey: 'teams_id',
 });
 
-Teams.hasMany(User, {
-  foreignKey: 'my_team',
-});
-
-User.belongsTo(Teams, {
-  foreignKey: 'my_team',
-})
-
-Teams.hasMany(Comments, {
-  foreignKey: 'country_id',
-})
-
-Comments.belongsTo(Teams,{
-  foreignKey: 'country_id'
-})
-
-module.exports = { User, Comments, Teams };
+module.exports = { User, Comment, Teams };

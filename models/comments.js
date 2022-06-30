@@ -14,15 +14,15 @@ Comment.init({
         autoIncrement: true
     },
 // user id column
-    user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'user',
-            key: 'id'
-        }
-    },
-    country_id: {
+    // user_id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false,
+    //     references: {
+    //         model: 'user',
+    //         key: 'id'
+    //     }
+    // },
+    teams_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
