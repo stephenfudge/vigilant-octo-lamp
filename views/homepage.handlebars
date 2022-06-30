@@ -137,3 +137,25 @@
   </div>
 </div>
 </div>
+
+{{#each comments as |comment|}}
+<p>{{comment.comment_text}}</p>
+{{/each}}
+
+{{#if logged_in}}
+<div>
+<form id="commentBar">
+  <div class="form-group">
+    <label for="commentBar">Leave a Comment</label>
+    <input type="text" class="form-control" id="commentText" placeholder="Comment">
+  </div>
+    <div class="form-group">
+    <label for="commentBar">About what Team</label>
+    <input type="text" class="form-control" id="commentTeam" placeholder="Team">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{{/if}}
+
+<script src="/javascript/commentAdd.js"></script>

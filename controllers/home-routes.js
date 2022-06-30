@@ -40,9 +40,26 @@ router.get('/', async (req, res) => {
       const groupH = teams.filter( group =>{
         return group.group_letter === 'H';
       });
-      console.log(groupA)
-      res.render('homepage', { teams, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH});
+      const commentData = await Comment.findAll().catch((err) => { 
+        res.json(err);
+      });
+        const comments = commentData.map((comms) => comms.get({ plain: true }));
+        console.log("======================")
+        console.log(comments)
+      // console.log(groupA)
+      res.render('homepage', { teams, comments, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, logged_in: req.session.logged_in});
     });
+
+    // router.get('/', async (req, res) => {
+    //   const commentData = await Comment.findAll().catch((err) => { 
+    //       res.json(err);
+    //     });
+    //       const comments = commentData.map((comms) => comms.get({ plain: true }));
+    //       console.log("======================")
+    //       console.log(comments)
+
+    //       res.render('homepage', { comments, logged_in: req.session.logged_in});
+    //     });
 
     // Get one country 
 router.get('/country/:id', async (req, res) => {
@@ -104,6 +121,93 @@ router.get('/login', (req, res) => {
     }
   
     res.render('signup');
+  });
+
+// CREATE new user
+router.post('/', async (req, res) => {
+  try {
+    const dbUserData = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    req.session.save(() => {
+      req.session.logged_in = true;
+
+      res.status(200).json(dbUserData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//Sign In
+// Login
+router.post('/login', async (req, res) => {
+  try {
+    const dbUserData = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+
+    if (!dbUserData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    }
+
+    const validPassword = await dbUserData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.logged_in = true;
+
+      res
+        .status(200)
+        .json({ user: dbUserData, message: 'You are now logged in!' });
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+//Logout route destroys the session
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+router.post('/comment', async (req, res) => {
+  try {
+      
+      const newCommentData = await Comment.create({
+      comment_text: req.body.comment_text,
+      country_id: req.body.country_id,
+      user_id: req.session.user_id,
+      });
+      
+      res.render('homepage')
+  } catch (err) {
+      console.log(err);
+      res.status(400).json(err);
+  }
   });
 
 
