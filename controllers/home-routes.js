@@ -76,15 +76,15 @@ router.get('/country/:id', async (req, res) => {
         //     'country_id',
         //   ],
         // },
-      //   {
-      //     model: User,
-      //     atrributes: [
-      //       'username',
-      //       'id',
-      //       'my_team',
-      //     ]
-      //   }
-      // ],
+    //     {
+    //       model: User,
+    //       atrributes: [
+    //         'username',
+    //         'id',
+    //         'my_team',
+    //       ]
+    //     }
+    //   ],
     // }
     );
 
