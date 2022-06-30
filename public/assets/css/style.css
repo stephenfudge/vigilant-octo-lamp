@@ -91,6 +91,20 @@
 .flag-bio{
     max-width: 300px;
     max-height: 300px;
-    padding-bottom: 1%;
+   border: black solid 0.5px;
+   margin-bottom: 10px;
+}
+
+/* .single-country{
+    border: 10px solid pink;
+    justify-content: space-between;
+} */
+
+/* .country-card{
+    align-content: flex-end;
+} */
+
+.login-text{
+    margin-left: 25px;
 }
 
