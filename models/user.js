@@ -37,7 +37,8 @@ User.init(
      },
      my_team: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: 2,
       references: {
         model: 'teams',
         key: 'id'
