@@ -30,3 +30,9 @@
 max-width: 25px;
 max-height: 25px;
 }
+
+.flag-bio{
+    max-width: 300px;
+    max-height: 300px;
+    padding-bottom: 1%;
+}
