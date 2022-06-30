@@ -88,6 +88,7 @@ router.get('/country/:id', async (req, res) => {
         // }
       ],
     }
+
     );
 
     const team = dbTeamData.get({ plain: true });

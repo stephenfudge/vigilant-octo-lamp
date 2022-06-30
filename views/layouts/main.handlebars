@@ -30,6 +30,8 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -65,22 +67,30 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="container-fluid">
-                     {{#if logged_in}}
-        
-                   {{!-- <button class="no-button" id="logout">logout</button> --}}
-                   <a href="" class="text-white"><button type="button" class="btn btn-primary" id="logout">Logout</a></button>
-                       {{else}}
-                   <a href="/login" class="text-white"><button type="button" class="btn btn-primary" id="login-btn">Login</a></button>
-                    <a href="/signup" class="text-white"><button type="button" class="btn btn-primary" id="signup-btn">SignUp</a></button>
-                  {{/if}}
-                   
+            </div>
+
+            <div class="log-btn">
+                <form class="container-fluid log-btn">
+                    {{#if logged_in}}
+
+                    {{!-- <button class="no-button" id="logout">logout</button> --}}
+                    <a href="" class="text-white"><button type="button" class="btn btn-primary log-btn"
+                            id="logout">Logout</a></button>
+                    {{else}}
+                    <a href="/login" class="text-white"><button type="button" class="btn btn-primary log-btn"
+                            id="login-btn">Login</a></button>
+                    <a href="/signup" class="text-white"><button type="button" class="btn btn-primary log-btn"
+                            id="signup-btn">SignUp</a></button>
+                    {{/if}}
                 </form>
             </div>
+
+        </div>
         </div>
     </nav>
+
     <!-- News Slideshow -->
-    <div class="container mt-5 latest-news-ribbon">
+    <div class="container-fluid latest-news-ribbon">
         <div class="row">
             <div class="col-md-12">
                 <div class="d-flex justify-content-between align-items-center breaking-news">
@@ -95,6 +105,50 @@
             </div>
         </div>
     </div>
+
+    {{!-- Carousel --}}
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="/images/stadiums/1-stadium.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Get the Full World Cup 2022 Experience</h2>
+        <p>Get the lastest World Cup News - Interact with other Fans - Learn More about the 2022 World Cup</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="/images/stadiums/2-stadium.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/images/stadiums/3-stadium.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
     {{{body}}}
     {{#if logged_in}}
     <script src="/javascript/logout.js"></script>
