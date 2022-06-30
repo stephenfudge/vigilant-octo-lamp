@@ -1,5 +1,4 @@
 
-
 /* Nav Bar */
 
 #nav-bar {
@@ -22,13 +21,12 @@
     padding: 0%;
 }
 
-
-/* .latest-news-container{
+.latest-news-container{
     background-color: #eeeee4;
     padding: 0%;
     margin: 0%;
     width: 300%;
-} */
+}
 
 .latest-news-ribbon{
     width: 100%;
@@ -82,7 +80,14 @@
     border-bottom: 0px;
 }
 
+/* Flags */
 .flag{
+    max-width: 25px;
+    max-height: 25px;
+    border-radius: 50%;
+}
+
+.flag-bio{
     max-width: 25px;
     max-height: 25px;
     border-radius: 50%;
