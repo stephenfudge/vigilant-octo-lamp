@@ -1,7 +1,7 @@
 <div class="card">
     <h5 class="card-header">{{team.name}}</h5>
     <div class="card-body">
-    <img src="/images/{{team.image}}" alt="{{team.name}}">
+    <img src="/images/{{team.image}}" alt="{{team.name}}" class="flag-bio">
       <h5 class="card-title">{{team.name}}</h5>
       <ul>
         <li>Nations Capital: {{team.capital}}</li>
@@ -11,4 +11,6 @@
         <li>Star Player: {{team.star_player}}</li>
       </ul>
   </div>
+
+  {{>add-comments}}
   </div>

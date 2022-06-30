@@ -87,3 +87,10 @@
     max-height: 25px;
     border-radius: 50%;
     }
+
+.flag-bio{
+    max-width: 300px;
+    max-height: 300px;
+    padding-bottom: 1%;
+}
+

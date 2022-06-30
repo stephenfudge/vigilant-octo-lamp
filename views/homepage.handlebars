@@ -136,9 +136,11 @@
   </div>
 </div>
 
-{{#each comments as |comment|}}
+ <h3>Comments:</h3>
+  {{#each comments as |comment|}}
 <p>{{comment.comment_text}}</p>
 {{/each}}
+
 
 {{#if logged_in}}
 <div>
