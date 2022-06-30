@@ -65,8 +65,8 @@ router.get('/', async (req, res) => {
 router.get('/country/:id', async (req, res) => {
   try {
     const dbTeamData = await Teams.findByPk(req.params.id,
-       {
-      include: [
+      //  {
+      // include: [
         // {
         //   model: Comment,
         //   attributes: [
@@ -76,16 +76,16 @@ router.get('/country/:id', async (req, res) => {
         //     'country_id',
         //   ],
         // },
-        {
-          model: User,
-          atrributes: [
-            'username',
-            'id',
-            'my_team',
-          ]
-        }
-      ],
-    }
+    //     {
+    //       model: User,
+    //       atrributes: [
+    //         'username',
+    //         'id',
+    //         'my_team',
+    //       ]
+    //     }
+    //   ],
+    // }
     );
 
     const team = dbTeamData.get({ plain: true });
