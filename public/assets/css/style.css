@@ -1,38 +1,96 @@
+
+
+/* Nav Bar */
+
 #nav-bar {
-    background-color: #790628;
+    background-color: #250214;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
 }
+
+.log-btn{
+    max-width: 575px;
+    justify-content: right;
+    align-items: right;
+}
+
+
+/* Where it says Latest News */
+.news{
+    background-color: #250214;
+    padding: 0%;
+}
+
+
+/* .latest-news-container{
+    background-color: #eeeee4;
+    padding: 0%;
+    margin: 0%;
+    width: 300%;
+} */
 
 .latest-news-ribbon{
     width: 100%;
     margin: 0px;
     padding: 0px;
 }
-
-
-.news{
-    background-color: #790628;
-}
-
-.news-scroll{
-    background-color: #e6e1e0;
-    margin: 0px;
-    padding: 0px;
-}
-
 .breaking-news{
-    background-color: #e6e1e0;
+    background-color: #eeeee4;
     margin: 0px;
     padding: 0px;
     text-align: center;
     width: 100%;
+    display: inline;
 }
+
+.news-scroll{
+    background-color: #eeeee4;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+/* Card Content */
+.group-card{
+    margin: 15px;
+    padding: 5px;
+    border-width: 10px;
+    border: #250214;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+
+.list-group{
+    margin: 10px;  
+ 
+    background-color: #eeeee4;
+    border-width: 10px;
+    border: #250214;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+.list-group-item{
+    /* margin: 10px;   */
+    background-color: #eeeee400;
+    border-width: 10px;
+    border: #250214;
+    border-style: solid;
+    border-radius: 2.5px;
+    border-bottom: 0px;
+}
+
 .flag{
-max-width: 25px;
-max-height: 25px;
-}
+    max-width: 25px;
+    max-height: 25px;
+    border-radius: 50%;
+    }
 
 .flag-bio{
     max-width: 300px;
     max-height: 300px;
     padding-bottom: 1%;
 }
+
