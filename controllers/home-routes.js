@@ -98,7 +98,7 @@ router.get('/country/:id', async (req, res) => {
     // console.log(blog.user)
     // console.log(blog.user.user_name)
     // const comments = blog.comments
-    res.render('singlecountry', { team, loggedIn: req.session.loggedIn });
+    res.render('singlecountry', { team, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
