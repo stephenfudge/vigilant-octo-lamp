@@ -1,13 +1,15 @@
 async function newComment(event) {
     event.preventDefault();
     const commentText = document.querySelector('#commentText').value;
-    const team = document.querySelector('#commentTeam').value;
+    const rawTeam = document.querySelector('#commentTeam').value;
+    const teamSplit = rawTeam.split(' ')
+    const team = teamSplit[0];
 
     const response = await fetch(`/comment`, {
       method: 'POST',
       body: JSON.stringify({
         comment_text: commentText,
-        country_id: team,
+        teams_id: team,
       }),
       headers: {
         'Content-Type': 'application/json',

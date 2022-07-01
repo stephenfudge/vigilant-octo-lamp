@@ -93,12 +93,10 @@ router.get('/country/:id', async (req, res) => {
 
     const team = dbTeamData.get({ plain: true });
     console.log("=====================================================================")
-    // // console.log(blog)
-    // // console.log(blog.comments)
-    // console.log(blog.user)
-    // console.log(blog.user.user_name)
-    // const comments = blog.comments
-    res.render('singlecountry', { team, loggedIn: req.session.loggedIn });
+    console.log(team);
+    const countryComments = team.comments
+
+    res.render('singlecountry', { team, countryComments, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -147,7 +145,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-//Sign In
+
 // Login
 router.post('/login', async (req, res) => {
   try {
@@ -204,8 +202,8 @@ router.post('/comment', async (req, res) => {
       
       const newCommentData = await Comment.create({
       comment_text: req.body.comment_text,
-      country_id: req.body.country_id,
-      user_id: req.session.user_id,
+      teams_id: req.body.teams_id,
+      // user_id: req.session.user_id,
       });
       
       res.render('homepage')
