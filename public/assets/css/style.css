@@ -114,10 +114,12 @@
 
 .login-bg {
     background-image: url("../../images/stadiums/2-stadium.jpg");
+    background-size: cover;
 }
 
 .signup-bg {
     background-image: url("../../images/stadiums/3-stadium.jpg");
+    background-size: cover;
 }
 
 .single-bg {
@@ -130,3 +132,47 @@
     margin-left: 25%;
     margin-right: 25%;
 }
+/* 
+.bo1{
+    border: solid 10px pink;
+}
+
+.bo2{
+    border: solid 10px green;
+}
+
+ .bo3{
+        border: solid 10px purple;
+    }
+    .bo4{
+        border: solid 10px red;
+    }
+
+    .bo5{
+        border: solid 10px orange;
+    }
+    .bo6{
+        border: solid 10px blue;
+
+    } */
+
+    hr{
+color: pink;
+size: 25px;
+    }
+
+    footer{
+        background-color: bisque;
+        font-size: large;
+        text-align: center;
+        color: green;
+        height: auto;
+    }
+
+    .nametext{
+        margin-left: 20%;
+    }
+
+    .nametext2{
+        margin-left: 18%;
+    }
