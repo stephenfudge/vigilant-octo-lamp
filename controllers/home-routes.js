@@ -93,10 +93,12 @@ router.get('/country/:id', async (req, res) => {
 
     const team = dbTeamData.get({ plain: true });
     console.log("=====================================================================")
+
     console.log(team);
     const countryComments = team.comments
 
     res.render('singlecountry', { team, countryComments, logged_in: req.session.logged_in });
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
