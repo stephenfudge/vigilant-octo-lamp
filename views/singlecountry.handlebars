@@ -35,5 +35,11 @@
   </div>
      </div>
 
+     {{#each countryComments as |comment|}}
+      <ul>
+        <li>  '{{comment.comment_text}}'</li>
+      </ul>
+      {{/each}}
+
      {{>add-comments}}
 
