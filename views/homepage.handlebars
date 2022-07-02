@@ -139,7 +139,10 @@
 
  <h3>Comments:</h3>
   {{#each comments as |comment|}}
-<p>{{comment.comment_text}}</p>
+  <ul>
+    <li>{{comment.comment_text}} </li>
+  </ul>
+{{!-- <p>{{comment.comment_text}}</p> --}}
 {{/each}}
 
 
