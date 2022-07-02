@@ -1,4 +1,3 @@
-
 /* Nav Bar */
 
 #nav-bar {
@@ -8,7 +7,7 @@
     text-align: center;
 }
 
-.log-btn{
+.log-btn {
     max-width: 575px;
     justify-content: right;
     align-items: right;
@@ -16,24 +15,25 @@
 
 
 /* Where it says Latest News */
-.news{
+.news {
     background-color: #250214;
     padding: 0%;
 }
 
-.latest-news-container{
+.latest-news-container {
     background-color: #eeeee4;
     padding: 0%;
     margin: 0%;
     width: 300%;
 }
 
-.latest-news-ribbon{
+.latest-news-ribbon {
     width: 100%;
     margin: 0px;
     padding: 0px;
 }
-.breaking-news{
+
+.breaking-news {
     background-color: #eeeee4;
     margin: 0px;
     padding: 0px;
@@ -42,7 +42,7 @@
     display: inline;
 }
 
-.news-scroll{
+.news-scroll {
     background-color: #eeeee4;
     margin: 0px;
     padding: 0px;
@@ -50,7 +50,7 @@
 }
 
 /* Card Content */
-.group-card{
+.group-card {
     margin: 15px;
     padding: 5px;
     border-width: 10px;
@@ -60,9 +60,9 @@
 }
 
 
-.list-group{
-    margin: 10px;  
- 
+.list-group {
+    margin: 10px;
+
     background-color: #eeeee4;
     border-width: 10px;
     border: #250214;
@@ -70,7 +70,7 @@
     border-radius: 15px;
 }
 
-.list-group-item{
+.list-group-item {
     /* margin: 10px;   */
     background-color: #eeeee400;
     border-width: 10px;
@@ -81,18 +81,18 @@
 }
 
 /* Flags */
-.flag{
+.flag {
     max-width: 25px;
     max-height: 25px;
     border-radius: 50%;
 
-    }
+}
 
-.flag-bio{
+.flag-bio {
     max-width: 300px;
     max-height: 300px;
-   border: black solid 0.5px;
-   margin-bottom: 10px;
+    border: black solid 0.5px;
+    margin-bottom: 10px;
 }
 
 /* .single-country{
@@ -104,7 +104,29 @@
     align-content: flex-end;
 } */
 
-.login-text{
+.login-text {
     margin-left: 25px;
 }
 
+.bg-image {
+    background-image: url("../../images/stadiums/1-stadium.jpg");
+}
+
+.login-bg {
+    background-image: url("../../images/stadiums/2-stadium.jpg");
+}
+
+.signup-bg {
+    background-image: url("../../images/stadiums/3-stadium.jpg");
+}
+
+.single-bg {
+    background-image: url("../../images/stadiums/4-stadium.jpg");
+}
+
+.formsadjust {
+    width: 50%;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+}
