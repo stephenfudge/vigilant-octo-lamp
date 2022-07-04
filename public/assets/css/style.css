@@ -141,9 +141,10 @@
 /* Dream Team Formation */
 .soccer-formation {
 	margin: 0 auto;
-	background: #34495e;
 	font-family: "Open Sans", sans-serif;
 	cursor: default;
+    background-image: url("../../images/qatar-shoreline.png");
+    background-size: contain;
 }
 
 
@@ -159,19 +160,14 @@ main {
 	padding: 40px 50px;
 }
 
-.soccer-formation-card{
-    background-image: url("../../images/qatar-shoreline.png");
-    background-size: cover;
-}
-
 .pitch {
-	background: #26A65B;
+    background: #26A65B;
 	width: 355px;
 	height: 455px;
 	border-radius: 5px;
 	padding: 0;
-	margin: 0;
-	display: inline-block;
+    margin-left: 40%;
+    display: inline-block;
 }
 
 .pitch h4 {
@@ -255,16 +251,6 @@ main {
 	background: #34495e;
 }
 
-p {
-	width: 355px;
-	height: 455px;
-	background: rgba(0, 0, 0, .6);
-	margin: 13px 16px;
-	border-radius: 5px;
-	padding: 20px;
-	display: inline-block;
-}
-
 p:after {
 	content: '';
 	position: absolute;
@@ -277,7 +263,7 @@ p:after {
 	border-left: solid 20px transparent;
 	border-right: solid 20px transparent;
 }
-/*  */
+
 
     hr{
 color: pink;
