@@ -299,12 +299,8 @@ size: 25px;
    padding-top: 25%;
 }
 
-#team-list-card{
-    margin-top: 20%;
-    margin-bottom: 5%;
-}
-
-#test{
-    padding-bottom: 50%;
-    background: white, 0.2;
+#nobullets{
+    list-style-type: none; 
+  padding: 0;
+  margin: 0;
 }

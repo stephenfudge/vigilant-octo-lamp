@@ -88,13 +88,15 @@
     
                     {{!-- created teams  --}}
                     <div class="col-lg-2"> 
-                        <div class="card" id="team-list-card">
+                        <div class="card">
   {{#each dreamteam as |team|}}
+   <ul id="nobullets">
     <li><a href="/dreamteam/{{team.id}}" >
 
     <h5 class="card-header" id="test">Team {{team.id}}</h5>
   </a>
     </li>
+   </ul>
      {{/each}}
 </div></div>
                         {{!-- image card  --}}
