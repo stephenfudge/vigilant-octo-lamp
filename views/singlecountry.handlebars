@@ -1,53 +1,5 @@
 
-{{!-- <div class="card">
-    <h5 class="card-header">{{team.name}}</h5>
-    <div class="card-body">
-    <img src="/images/{{team.image}}" alt="{{team.name}}" class="flag-bio">
-      <h5 class="card-title">{{team.name}}</h5>
-      <ul>
-        <li>Nations Capital: {{team.capital}}</li>
-        <li>World Ranking: {{team.fifa_ranking}}</li>
-        <li>Group: {{team.group_letter}}</li>
-        <li>World Cup Triumphs: {{team.times_won}}</li>
-        <li>Star Player: {{team.star_player}}</li>
-      </ul>
-  </div>
-
-  </div> --}}
-
-{{!-- commented out on july1 to stuff something. this block of code does work --}}
-  {{!-- <div class="container single-bg">
-      <h3 class="card-header text-white">{{team.name}}</h3>
-     <div class="single-country">
-    <div class="card-body">
-    <img src="/images/{{team.image}}" alt="{{team.name}}" class="flag-bio">
-    </div>
-    <div class="card-body country-card">
-     <h5 class="card-title text-white">{{team.name}}</h5>
-      <ul>
-        <li class="text-white">Nations Capital: {{team.capital}}</li>
-        <li class="text-white">World Ranking: {{team.fifa_ranking}}</li>
-        <li class="text-white">Group: {{team.group_letter}}</li>
-        <li class="text-white">World Cup Triumphs: {{team.times_won}}</li>
-        <li class="text-white">Star Player: {{team.star_player}}</li>
-      </ul>
-  </div>
-     </div>
-
-     {{#each countryComments as |comment|}}
-      <ul>
-        <li class="text-white">  '{{comment.comment_text}}'</li>
-      </ul>
-      {{/each}}
-
-     {{>add-comments}}
-
-</div> --}}
-{{!-- refer to line 18 --}}
-
-
 <div class="single-bg">
-    {{!-- <div class="container single-bg"> --}}
         <div class="container">
         <div class="row">
             <div class="col">
@@ -82,6 +34,5 @@
         </ul>
         {{/each}}
 
-        {{!-- {{>add-comments}} --}}
-        {{>singleteam-add-comments}}
+       {{>singleteam-add-comments}}
 </div>
