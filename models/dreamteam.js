@@ -2,10 +2,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Teams extends Model {}
+class DreamTeam extends Model {}
 
 //  defines table columns and how to allow data to be collected
-Teams.init({
+DreamTeam.init({
 // id column
     id: {
         type: DataTypes.INTEGER,
@@ -13,39 +13,52 @@ Teams.init({
         primaryKey: true,
         autoIncrement: true
     },
-// country name column
-    name: {
+// Goalkeepr
+    Gk: {
         type: DataTypes.STRING,
         allowNull: false,
         },
-// fifa ranking column
-    fifa_ranking: {
-        type: DataTypes.INTEGER,
+//RightBack
+    Rb: {
+        type: DataTypes.STRING,
         allowNull: false,
         },
-    // what   
-        group_letter: {
+//Centre Back1   
+        Cb1: {
         type: DataTypes.STRING,
         allowNull: false,
        },
-       // capital of country
-        capital: {
+//Centre back 2
+        Cb2: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        times_won: {
-            type: DataTypes.INTEGER,
+//Left back 
+        Lb: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        star_player: {
+        Rw: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        image: {
+        Cm1: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        flag: {
+        Cm2: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        Lw: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        St1: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        St2: {
             type: DataTypes.STRING,
             allowNull: true,
         }
@@ -54,8 +67,8 @@ Teams.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'teams',
+    modelName: 'dreamteam',
 }
 );
 
-module.exports = Teams;
+module.exports = DreamTeam;

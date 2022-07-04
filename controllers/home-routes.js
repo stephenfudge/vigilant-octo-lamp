@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // const Comment  = require('../models/comments');
 // const User = require("../models/user");
-// const Teams = require("../models/teams");
+const DreamTeam = require("../models/dreamteam");
 
 const { Comment, User, Teams} = require('../models');
 
@@ -214,6 +214,43 @@ router.post('/comment', async (req, res) => {
       res.status(400).json(err);
   }
   });
+
+  router.get('/dreamteam', async (req, res) => {
+    const dreamteamData = await DreamTeam.findAll().catch((err) => { 
+        res.json(err);
+      });
+        const dreamteam = dreamteamData.map((blog) => blog.get({ plain: true }));
+        console.log('==================')
+        console.log(dreamteam)
+
+        res.render('dreamteam', { dreamteam, logged_in: req.session.logged_in});
+      });
+
+router.post('/dreamteam', async (req, res) => {
+        try {
+            
+            const newCommentData = await DreamTeam.create({
+            Gk: req.body.Gk,
+            Lb: req.body.Lb,
+            Cb1: req.body.Cb1,
+            Cb2: req.body.Cb2,
+            Rb: req.body.Rb,
+            Lw: req.body.Lw,
+            Cm1: req.body.Cm1,
+            Cm2: req.body.Cm2,
+            Rw: req.body.Rw,
+            St1: req.body.St1,
+            St2: req.body.St2,
+            });
+            
+            res.render('dreamteam')
+        } catch (err) {
+            console.log(err);
+            res.status(400).json(err);
+        }
+        });
+
+
 
 
 module.exports = router;
