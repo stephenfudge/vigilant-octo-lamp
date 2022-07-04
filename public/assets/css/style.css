@@ -250,7 +250,7 @@ main {
 	color: #BDC3C7;
 	background: #34495e;
 }
-
+/* 
 p:after {
 	content: '';
 	position: absolute;
@@ -262,7 +262,7 @@ p:after {
 	border-bottom: solid 10px #000;
 	border-left: solid 20px transparent;
 	border-right: solid 20px transparent;
-}
+} */
 
 
     hr{
