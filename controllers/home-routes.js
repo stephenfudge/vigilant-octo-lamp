@@ -278,5 +278,20 @@ router.delete('/dreamteam/:id', async (req, res) => {
   }
 });
 
+router.post('/singlecomment', async (req, res) => {
+  try {
+      
+      const newCommentData = await Comment.create({
+      comment_text: req.body.comment_text,
+      teams_id: req.body.teams_id,
+      });
+      
+      res.render('homepage')
+  } catch (err) {
+      console.log(err);
+      res.status(400).json(err);
+  }
+  });
+
 
 module.exports = router;

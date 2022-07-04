@@ -71,7 +71,6 @@
 }
 
 .list-group-item {
-    /* margin: 10px;   */
     background-color: #eeeee400;
     border-width: 10px;
     border: #250214;
@@ -95,14 +94,6 @@
     margin-bottom: 10px;
 }
 
-/* .single-country{
-    border: 10px solid pink;
-    justify-content: space-between;
-} */
-
-/* .country-card{
-    align-content: flex-end;
-} */
 
 .login-text {
     margin-left: 25px;
@@ -129,6 +120,7 @@
 .dream-bg{
     background-image: url("../../images/stadiums/5-stadium.jpg");
     background-size: cover;
+    z-index: -1;
 }
 
 .formsadjust {
@@ -317,29 +309,16 @@ size: 25px;
         color: whitesmoke;
     }
 
-
-
-/* borders to test divs */
-
-.bo1{
-    border: solid 10px pink;
+#team_formation{
+   padding-top: 25%;
 }
 
-.bo2{
-    border: solid 10px green;
+#team-list-card{
+    margin-top: 20%;
+    margin-bottom: 5%;
 }
 
- .bo3{
-        border: solid 10px purple;
-    }
-    .bo4{
-        border: solid 10px red;
-    }
-
-    .bo5{
-        border: solid 10px orange;
-    }
-    .bo6{
-        border: solid 10px blue;
-
-    }
+#test{
+    padding-bottom: 50%;
+    background: white, 0.2;
+}

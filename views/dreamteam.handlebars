@@ -1,14 +1,13 @@
-    {{!-- background image --}}
+                        {{!-- background image --}}
                  <div class="dream-bg">
                     <h1 id="dreamh1">Create Your Dream Team</h1>
                     <div class="container-fluid py-5">
-                  
-                        <div class="row">
+                      <div class="row">
                            
-                <div class="col-lg-5 bo2">
+                              {{!-- form to create team --}}
+                <div class="col-lg-5">
                     <div id="dreamteamform">
-                  
-                   {{!-- form --}}
+                
                         <form id="dreamteam-form">
                             <!-- GK input -->
                             <div class="form-outline mb-4">
@@ -81,15 +80,29 @@
                                 <input type="text" id="St2" class="form-control" />
                             </div>
 
-
                             <!-- Submit button -->
                             <button type="submit" class="btn btn-primary btn-block mb-4">Create</button>
                         </form>                            
                     </div>
                     </div>
-    {{!-- two more divs --}}
-                    <div class="col-lg-2 bo3"><div class="card-body py-5 px-md-5"></div></div>
-                    <div class="col-lg-5 bo4"> <div class="card-body py-5 px-md-5"></div></div>
+    
+                    {{!-- created teams  --}}
+                    <div class="col-lg-2"> 
+                        <div class="card" id="team-list-card">
+  {{#each dreamteam as |team|}}
+    <li><a href="/dreamteam/{{team.id}}" >
+
+    <h5 class="card-header" id="test">Team {{team.id}}</h5>
+  </a>
+    </li>
+     {{/each}}
+</div></div>
+                        {{!-- image card  --}}
+                    <div class="col-lg-5">
+                           <div class="card-body py-5 px-md-5">
+                             <img src="../images/_formation.png" width="500px" height="500px"  alt="text alt" id="team_formation" />
+                         </div>
+                         </div>
                 </div>
             </div>
         </div>
@@ -99,12 +112,5 @@
        
     </section>
 
-<div class="card">
-  {{#each dreamteam as |team|}}
-  <a class="card" href="/dreamteam/{{team.id}}" >
-    <h5 class="card-header">Team {{team.id}}</h5>
-  </a>
-  {{/each}}
-</div>
 
     <script src="/javascript/dreamteam.js"></script>
