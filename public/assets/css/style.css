@@ -145,28 +145,6 @@
     color: white;
 }
 
-/* .bo1{
-    border: solid 10px pink;
-} */
-
-.bo2{
-    border: solid 10px green;
-}
-
- .bo3{
-        border: solid 10px purple;
-    }
-    .bo4{
-        border: solid 10px red;
-    }
-
-    .bo5{
-        border: solid 10px orange;
-    }
-    .bo6{
-        border: solid 10px blue;
-
-    }
 
     hr{
 color: pink;
@@ -196,4 +174,31 @@ size: 25px;
     #dreamh1{
         text-align: center;
         color: whitesmoke;
+    }
+
+
+
+/* borders to test divs */
+
+.bo1{
+    border: solid 10px pink;
+}
+
+.bo2{
+    border: solid 10px green;
+}
+
+ .bo3{
+        border: solid 10px purple;
+    }
+    .bo4{
+        border: solid 10px red;
+    }
+
+    .bo5{
+        border: solid 10px orange;
+    }
+    .bo6{
+        border: solid 10px blue;
+
     }
