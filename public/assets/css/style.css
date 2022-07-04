@@ -132,16 +132,16 @@
     margin-left: 25%;
     margin-right: 25%;
 }
-/* 
-.bo1{
+
+/* .bo1{
     border: solid 10px pink;
-}
+} */
 
 .bo2{
     border: solid 10px green;
 }
 
- .bo3{
+ /* .bo3{
         border: solid 10px purple;
     }
     .bo4{
@@ -175,4 +175,8 @@ size: 25px;
 
     .nametext2{
         margin-left: 18%;
+    }
+
+    body{
+        margin-bottom: 0;
     }
