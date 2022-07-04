@@ -95,4 +95,12 @@
        
     </section>
 
+<div class="card">
+  {{#each dreamteam as |team|}}
+  <a class="card" href="/dreamteam/{{team.id}}" >
+    <h5 class="card-header">Team {{team.id}}</h5>
+  </a>
+  {{/each}}
+</div>
+
     <script src="/javascript/dreamteam.js"></script>
