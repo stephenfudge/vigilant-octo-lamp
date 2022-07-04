@@ -126,11 +126,23 @@
     background-image: url("../../images/stadiums/4-stadium.jpg");
 }
 
+.dream-bg{
+    background-image: url("../../images/stadiums/5-stadium.jpg");
+    background-size: cover;
+}
+
 .formsadjust {
     width: 50%;
     justify-content: center;
     margin-left: 25%;
     margin-right: 25%;
+}
+
+#dreamteamform{
+    width: 60%;
+    justify-content: left;
+    line-height: 0.3%;
+    color: white;
 }
 
 /* .bo1{
@@ -141,7 +153,7 @@
     border: solid 10px green;
 }
 
- /* .bo3{
+ .bo3{
         border: solid 10px purple;
     }
     .bo4{
@@ -154,7 +166,7 @@
     .bo6{
         border: solid 10px blue;
 
-    } */
+    }
 
     hr{
 color: pink;
@@ -179,4 +191,9 @@ size: 25px;
 
     body{
         margin-bottom: 0;
+    }
+
+    #dreamh1{
+        text-align: center;
+        color: whitesmoke;
     }
