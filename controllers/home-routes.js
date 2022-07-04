@@ -250,7 +250,33 @@ router.post('/dreamteam', async (req, res) => {
         }
         });
 
+  // Render Update
+  router.get('/dreamteam/:id', async (req, res) => {
+    try {
+      const dbDreamteamData = await DreamTeam.findByPk(req.params.id, {
 
+      }
+      );
+  
+      const dreamteam = dbDreamteamData.get({ plain: true });
+      res.render('singledreamteam', { dreamteam, loggedIn: req.session.loggedIn });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+  // DELETE POST
+router.delete('/dreamteam/:id', async (req, res) => {
+  try {
+    const deleteDreamTeam = await DreamTeam.destroy({where: { id: req.params.id }})
+    res.status(200).json(deleteDreamTeam)
+
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
 
 
 module.exports = router;
