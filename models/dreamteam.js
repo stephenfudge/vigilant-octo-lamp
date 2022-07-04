@@ -15,7 +15,7 @@ DreamTeam.init({
     },
 // Goalkeepr
     Gk: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING,git 
         allowNull: false,
         },
 //RightBack
