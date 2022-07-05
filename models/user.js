@@ -35,6 +35,7 @@ User.init(
         len: [6],
       },
      },
+     //Links to teams model
      teams_id: {
       type: DataTypes.INTEGER,
       allowNull: true,

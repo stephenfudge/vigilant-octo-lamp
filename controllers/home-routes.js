@@ -1,16 +1,10 @@
 const router = require('express').Router();
-// const Comment  = require('../models/comments');
-// const User = require("../models/user");
-// const DreamTeam = require("../models/dreamteam");
 
 const { Comment, User, Teams, DreamTeam} = require('../models');
 
-const bcrypt = require('bcrypt');
 
 
-const withAuth = require('../utils/auth')
-
-
+//The get request for the info on the homepage
 router.get('/', async (req, res) => {
   const teamData = await Teams.findAll().catch((err) => { 
       res.json(err);
@@ -18,6 +12,8 @@ router.get('/', async (req, res) => {
       const teams = teamData.map((blog) => blog.get({ plain: true }));
       console.log('==================')
       console.log(teams)
+
+    // Filters all teams into their respective world cup groups to be displayed as such
       const groupA = teams.filter( group =>{
         return group.group_letter === 'A';
       });
@@ -46,24 +42,11 @@ router.get('/', async (req, res) => {
         res.json(err);
       });
         const comments = commentData.map((comms) => comms.get({ plain: true }));
-        console.log("======================")
-        console.log(comments)
-      // console.log(groupA)
       res.render('homepage', { teams, comments, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, logged_in: req.session.logged_in, username: req.session.userName});
     });
 
-    // router.get('/', async (req, res) => {
-    //   const commentData = await Comment.findAll().catch((err) => { 
-    //       res.json(err);
-    //     });
-    //       const comments = commentData.map((comms) => comms.get({ plain: true }));
-    //       console.log("======================")
-    //       console.log(comments)
 
-    //       res.render('homepage', { comments, logged_in: req.session.logged_in});
-    //     });
-
-    // Get one country 
+  // Get one country 
 router.get('/country/:id', async (req, res) => {
   try {
     const dbTeamData = await Teams.findByPk(req.params.id,
@@ -71,41 +54,20 @@ router.get('/country/:id', async (req, res) => {
       include: [
         {
           model: Comment,
-          // attributes: [
-          //   // 'id',
-          //   // 'comment_text',
-          //   // 'user_id',
-          //   // 'country_id',
-          // ],
         },
-        // {
-        //   model: User,
-        //   // atrributes: [
-        //   //   // 'username',
-        //   //   // 'id',
-        //   //   // 'my_team',
-        //   // ]
-        // }
       ],
     }
-
     );
-
     const team = dbTeamData.get({ plain: true });
-    console.log("=====================================================================")
-
-    console.log(team);
     const countryComments = team.comments
-
     res.render('singlecountry', { team, countryComments, logged_in: req.session.logged_in, username: req.session.userName });
-
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-
+//Render Login Page
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
@@ -116,6 +78,7 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+  //Render Signup Page
   router.get('/signup', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
@@ -135,6 +98,7 @@ router.post('/', async (req, res) => {
       password: req.body.password,
     });
 
+    //Uses session data
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.user_id = dbUserData.id;
@@ -149,7 +113,7 @@ router.post('/', async (req, res) => {
 });
 
 
-// Login
+// Login post request
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
@@ -173,7 +137,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-
+ //Uses session data
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.user_id = dbUserData.id;
@@ -201,13 +165,13 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//Add new comment via homepage
 router.post('/comment', async (req, res) => {
   try {
       
       const newCommentData = await Comment.create({
       comment_text: req.body.comment_text,
       teams_id: req.body.teams_id,
-      // user_id: req.session.user_id,
       });
       
       res.render('homepage')
@@ -217,6 +181,7 @@ router.post('/comment', async (req, res) => {
   }
   });
 
+  //Render Homepage
   router.get('/dreamteam', async (req, res) => {
     const dreamteamData = await DreamTeam.findAll(
       {        
@@ -233,10 +198,9 @@ router.post('/comment', async (req, res) => {
         res.json(err);
       });
         const dreamteam = dreamteamData.map((blog) => blog.get({ plain: true }));
-        console.log('==================')
-        console.log(dreamteam)
         const removeArray = dreamteam[0];
-        console.log('==================+++++++++++')
+      
+        //This stops the website crashing when new Users do not have a DreamTeam associated to them
         if (!removeArray){
           console.log("fail")
         } else {
@@ -248,6 +212,7 @@ router.post('/comment', async (req, res) => {
         res.render('dreamteam', { dreamteam, userInfo, logged_in: req.session.logged_in, username: req.session.userName, });
       });
 
+//Create new Dream Team
 router.post('/dreamteam', async (req, res) => {
         try {
             
@@ -289,7 +254,7 @@ router.post('/dreamteam', async (req, res) => {
     }
   });
 
-  // DELETE POST
+  // DELETE Dream Team
 router.delete('/dreamteam/:id', async (req, res) => {
   try {
     const deleteDreamTeam = await DreamTeam.destroy({where: { id: req.params.id }})
@@ -301,6 +266,7 @@ router.delete('/dreamteam/:id', async (req, res) => {
   }
 });
 
+//Post Single comment via individual page
 router.post('/singlecomment', async (req, res) => {
   try {
       
@@ -316,19 +282,9 @@ router.post('/singlecomment', async (req, res) => {
   }
   });
 
-      // Get the settings page
-      router.get('/settings', async (req, res) => {
-        const userData = await User.findAll(
-          // {        
-          //   where: {
-          //   user_id: req.session.user_id,
-          //   },
-          // //   include: [
-          // //     {
-          // //       model: DreamTeam,
-          // //     },
-          // //   ],
-          // }
+  // Get the settings page
+    router.get('/settings', async (req, res) => {
+      const userData = await User.findAll(
         ).catch((err) => { 
             res.json(err);
           });

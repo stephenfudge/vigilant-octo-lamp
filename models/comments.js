@@ -13,15 +13,7 @@ Comment.init({
         primaryKey: true,
         autoIncrement: true
     },
-// user id column
-    // user_id: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    //     references: {
-    //         model: 'user',
-    //         key: 'id'
-    //     }
-    // },
+// links to teams model
     teams_id: {
         type: DataTypes.INTEGER,
         allowNull: false,

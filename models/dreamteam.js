@@ -38,30 +38,37 @@ DreamTeam.init({
             type: DataTypes.STRING,
             allowNull: false
         },
+//Right Wing
         Rw: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+//Centre Midfield
         Cm1: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+//Centre Midfield 2
         Cm2: {
             type: DataTypes.STRING,
             allowNull: true,
         },
+//Left Wing
         Lw: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+//Striker 1
         St1: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+//Striker 2
         St2: {
             type: DataTypes.STRING,
             allowNull: true,
         },
+        //Links to user model
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

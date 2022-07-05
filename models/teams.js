@@ -33,18 +33,22 @@ Teams.init({
             type: DataTypes.STRING,
             allowNull: false,
         },
+        //Previous World Cup wins
         times_won: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        //Best Player
         star_player: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        //Big Flag Image
         image: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        //Thumbnail Flag Image
         flag: {
             type: DataTypes.STRING,
             allowNull: true,
