@@ -14,6 +14,7 @@ const dreamteamData = [
         Rw: "req.body.Rw",
         St1: "req.body.St1",
         St2: "req.body.St2",
+        user_id: 1,
     },   
 ]
 

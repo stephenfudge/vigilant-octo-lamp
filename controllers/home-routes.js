@@ -1,9 +1,9 @@
 const router = require('express').Router();
 // const Comment  = require('../models/comments');
 // const User = require("../models/user");
-const DreamTeam = require("../models/dreamteam");
+// const DreamTeam = require("../models/dreamteam");
 
-const { Comment, User, Teams} = require('../models');
+const { Comment, User, Teams, DreamTeam} = require('../models');
 
 const bcrypt = require('bcrypt');
 
@@ -49,7 +49,7 @@ router.get('/', async (req, res) => {
         console.log("======================")
         console.log(comments)
       // console.log(groupA)
-      res.render('homepage', { teams, comments, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, logged_in: req.session.logged_in});
+      res.render('homepage', { teams, comments, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, logged_in: req.session.logged_in, username: req.session.userName});
     });
 
     // router.get('/', async (req, res) => {
@@ -97,7 +97,7 @@ router.get('/country/:id', async (req, res) => {
     console.log(team);
     const countryComments = team.comments
 
-    res.render('singlecountry', { team, countryComments, logged_in: req.session.logged_in });
+    res.render('singlecountry', { team, countryComments, logged_in: req.session.logged_in, username: req.session.userName });
 
   } catch (err) {
     console.log(err);
@@ -138,6 +138,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.user_id = dbUserData.id;
+      req.session.userName = dbUserData.username;
 
       res.status(200).json(dbUserData);
     });
@@ -176,6 +177,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.user_id = dbUserData.id;
+      req.session.userName = dbUserData.username;
 
       res
         .status(200)
@@ -216,14 +218,29 @@ router.post('/comment', async (req, res) => {
   });
 
   router.get('/dreamteam', async (req, res) => {
-    const dreamteamData = await DreamTeam.findAll().catch((err) => { 
+    const dreamteamData = await DreamTeam.findAll(
+      {        
+        where:{
+        user_id: req.session.user_id,
+        },
+        include: [
+          {
+            model: User,
+          },
+        ],
+      }
+    ).catch((err) => { 
         res.json(err);
       });
         const dreamteam = dreamteamData.map((blog) => blog.get({ plain: true }));
         console.log('==================')
         console.log(dreamteam)
+        const removeArray = dreamteam[0];
+        console.log('==================+++++++++++')
+        const userInfo = removeArray.user
+        console.log(userInfo)
 
-        res.render('dreamteam', { dreamteam, logged_in: req.session.logged_in});
+        res.render('dreamteam', { dreamteam, userInfo, logged_in: req.session.logged_in, username: req.session.userName, });
       });
 
 router.post('/dreamteam', async (req, res) => {
@@ -241,6 +258,7 @@ router.post('/dreamteam', async (req, res) => {
             Rw: req.body.Rw,
             St1: req.body.St1,
             St2: req.body.St2,
+            user_id: req.session.user_id,
             });
             
             res.render('dreamteam')
@@ -250,7 +268,7 @@ router.post('/dreamteam', async (req, res) => {
         }
         });
 
-  // Render Update
+  // Render Single DreamTeam
   router.get('/dreamteam/:id', async (req, res) => {
     try {
       const dbDreamteamData = await DreamTeam.findByPk(req.params.id, {
@@ -259,7 +277,7 @@ router.post('/dreamteam', async (req, res) => {
       );
   
       const dreamteam = dbDreamteamData.get({ plain: true });
-      res.render('singledreamteam', { dreamteam, loggedIn: req.session.loggedIn });
+      res.render('singledreamteam', { dreamteam, logged_in: req.session.logged_in, username: req.session.userName });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
