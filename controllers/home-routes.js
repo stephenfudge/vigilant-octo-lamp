@@ -319,16 +319,16 @@ router.post('/singlecomment', async (req, res) => {
       // Get the settings page
       router.get('/settings', async (req, res) => {
         const userData = await User.findAll(
-          {        
-            where: {
-            user_id: req.session.user_id,
-            },
-          //   include: [
-          //     {
-          //       model: DreamTeam,
-          //     },
-          //   ],
-          }
+          // {        
+          //   where: {
+          //   user_id: req.session.user_id,
+          //   },
+          // //   include: [
+          // //     {
+          // //       model: DreamTeam,
+          // //     },
+          // //   ],
+          // }
         ).catch((err) => { 
             res.json(err);
           });
@@ -337,7 +337,7 @@ router.post('/singlecomment', async (req, res) => {
             console.log(user)
 
     
-            res.render('settings', { user, logged_in: req.session.logged_in, username: req.session.userName, });
+            res.render('settings', { user, logged_in: req.session.logged_in, username: req.session.userName });
           });
 
 
