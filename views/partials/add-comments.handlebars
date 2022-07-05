@@ -1,5 +1,5 @@
 
-
+{{!-- if logged in it will display the ability to leave a comment --}}
 
   {{#if logged_in}}
   <div>
@@ -45,12 +45,11 @@
                     <option value="30 Ghana">
                     <option value="31 Uruguay">
                     <option value="32 South Korea">
-
                 </datalist>
               <button type="submit" class="btn btn-primary">Submit</button>
         </form>
    
-  
+  {{!-- if not logged it will suggest you login to add a comment --}}
 {{else}}
 <div class="login-text">
 <strong class="text-white"> <a href="/login">LOGIN</a> TO ADD A COMMENT</strong>
