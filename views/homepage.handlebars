@@ -1,12 +1,13 @@
+{{!-- bg image --}}
 <div class="bg-image">
-  <div class="container">
 
+  {{!-- groups created dynamically --}}
+  <div class="container">
   <div class="row ">
     <div class="col border-10 group-card">
       <h2 class="text-center text-white">Group A</h2>
       {{#each groupA as |team|}}
       <div="card" style="width: 18rem;">
-
         <ul class="list-group list-group-flush">
           <a href="/country/{{team.id}}">
             <li class="list-group-item">  <span class="fi fi-{{team.flag}}"></span>
@@ -17,13 +18,10 @@
         {{/each}}
     </div>
 
-
-
     <div class="col group-card">
       <h2 class="text-center text-white">Group B</h2>
       {{#each groupB as |team|}}
       <div="card" style="width: 18rem;">
-
         <ul class="list-group list-group-flush">
           <a href="/country/{{team.id}}">
             <li class="list-group-item"> <span class="fi fi-{{team.flag}}"></span>
@@ -34,12 +32,10 @@
         {{/each}}
     </div>
 
-
     <div class="col group-card">
       <h2 class="text-center text-white">Group C</h2>
       {{#each groupC as |team|}}
       <div="card" style="width: 18rem;">
-
         <ul class="list-group list-group-flush">
           <a href="/country/{{team.id}}">
             <li class="list-group-item"> <span class="fi fi-{{team.flag}}"></span>
@@ -55,7 +51,6 @@
       <h2 class="text-center text-white">Group D</h2>
       {{#each groupD as |team|}}
       <div="card" style="width: 18rem;">
-
         <ul class="list-group list-group-flush">
           <a href="/country/{{team.id}}">
             <li class="list-group-item"> <span class="fi fi-{{team.flag}}"></span>
@@ -73,7 +68,6 @@
       <h2 class="text-center text-white">Group E</h2>
       {{#each groupE as |team|}}
       <div="card" style="width: 18rem;">
-
         <ul class="list-group list-group-flush">
           <a href="/country/{{team.id}}">
             <li class="list-group-item"> <span class="fi fi-{{team.flag}}"></span>
@@ -83,17 +77,11 @@
         </ul>
         {{/each}}
     </div>
-
-
-
-
-
 
     <div class="col group-card">
       <h2 class="text-center text-white">Group F</h2>
       {{#each groupF as |team|}}
       <div="card">
-
         <ul class="list-group list-group-flush">
           <a href="/country/{{team.id}}">
             <li class="list-group-item"> <span class="fi fi-{{team.flag}}"></span>
@@ -103,13 +91,11 @@
         </ul>
         {{/each}}
     </div>
-
 
     <div class="col group-card">
       <h2 class="text-center text-white">Group G</h2>
       {{#each groupG as |team|}}
       <div="card" style="width: 18rem;">
-
         <ul class="list-group list-group-flush">
           <a href="/country/{{team.id}}">
             <li class="list-group-item"> <span class="fi fi-{{team.flag}}"></span>
@@ -120,12 +106,10 @@
         {{/each}}
     </div>
 
-
     <div class="col group-card">
       <h2 class="text-center text-white">Group H</h2>
       {{#each groupH as |team|}}
       <div="card" style="width: 18rem;">
-
         <ul class="list-group list-group-flush">
           <a href="/country/{{team.id}}">
             <li class="list-group-item"> <span class="fi fi-{{team.flag}}"></span>
@@ -137,6 +121,8 @@
     </div>
   </div>
 </div>
+
+{{!-- comment bar --}}
     <div class="container-fluid latest-news-ribbon">
         <div class="row">
             <div class="col-md-12">
@@ -148,8 +134,6 @@
                         onmouseout="this.start();"> <a href="#">{{#each comments as |comment|}}
   
     <span> "{{comment.comment_text}}" ---- </span>
-  
-{{!-- <p>{{comment.comment_text}}</p> --}}
 {{/each}}</a> </a>
                     </marquee>
                 </div>
@@ -159,15 +143,6 @@
 
 
 
-{{!-- 
- <h3>Comments:</h3>
-  {{#each comments as |comment|}}
-  <ul>
-    <li>{{comment.comment_text}} </li>
-  </ul>
-<p>{{comment.comment_text}}</p> --}}
-{{!-- {{/each}} --}}
-
-
+{{!-- add comments partial --}}
 {{>add-comments}}
 </div>

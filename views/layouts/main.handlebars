@@ -47,6 +47,7 @@
                         <a class="nav-link" href="#">Scores</a>
                     </li>
 
+{{!-- if logged in it will show you the dream team links and the user account as well as a logout button--}}
                     {{#if logged_in}}
                     <li class="nav-item">
                         <a class="nav-link" href="/dreamteam">Dream Team</a>
@@ -57,7 +58,7 @@
                     {{/if}}
                 </ul>
             </div>
-
+            
             <div class="log-btn">
                 <form class="container-fluid log-btn">
                     {{#if logged_in}}
@@ -65,6 +66,7 @@
 
                     <a href="/" class="text-white"><button type="button" class="btn btn-primary log-btn"
                             id="logout">Logout</a></button>
+                            {{!-- if you are not logged in it will show you a login and signup option --}}
                     {{else}}
                     <a href="/login" class="text-white"><button type="button" class="btn btn-primary log-btn"
                             id="login-btn">Login</a></button>
@@ -73,7 +75,6 @@
                     {{/if}}
                 </form>
             </div>
-
         </div>
         </div>
     </nav>
@@ -100,8 +101,10 @@
         {{{body}}}
 </main>
 
+{{!-- partial for the footer --}}
 {{>footer}}
 
+{{!-- if logged in it will run the logout.js file if logout is clicked on --}}
     {{#if logged_in}}
     <script src="/javascript/logout.js"></script>
     {{/if}}

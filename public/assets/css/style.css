@@ -46,7 +46,6 @@ footer {
     align-items: right;
 }
 
-
 /* Where it says Latest News */
 .news {
     background-color: #250214;
@@ -132,6 +131,7 @@ footer {
     margin-left: 25px;
 }
 
+/* forms  */
 .formsadjust {
     width: 50%;
     justify-content: center;
@@ -155,8 +155,6 @@ footer {
     background-image: url("../../images/qatar-shoreline.png");
     background-size: contain;
 }
-
-
 
 .pitch {
     background: #26A65B;
@@ -248,8 +246,6 @@ footer {
     color: #BDC3C7;
     background: #34495e;
 }
-
-
 
 
 
