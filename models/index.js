@@ -1,6 +1,7 @@
 const User = require('./user');
 const Comment = require('./comments');
 const Teams = require('./teams');
+const DreamTeam = require('./dreamteam')
 
 // User.hasMany(Comments, {
 //   foreignKey: 'user_id',
@@ -27,4 +28,13 @@ Comment.belongsTo(Teams, {
   foreignKey: 'teams_id',
 });
 
-module.exports = { User, Comment, Teams };
+User.hasMany(DreamTeam, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+});
+
+DreamTeam.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
+module.exports = { User, Comment, Teams, DreamTeam };
