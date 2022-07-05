@@ -237,7 +237,12 @@ router.post('/comment', async (req, res) => {
         console.log(dreamteam)
         const removeArray = dreamteam[0];
         console.log('==================+++++++++++')
-        const userInfo = removeArray.user
+        if (!removeArray){
+          console.log("fail")
+        } else {
+          var userInfo = removeArray.user
+        }
+       
         console.log(userInfo)
 
         res.render('dreamteam', { dreamteam, userInfo, logged_in: req.session.logged_in, username: req.session.userName, });
@@ -310,6 +315,30 @@ router.post('/singlecomment', async (req, res) => {
       res.status(400).json(err);
   }
   });
+
+      // Get the settings page
+      router.get('/settings', async (req, res) => {
+        const userData = await User.findAll(
+          {        
+            where: {
+            user_id: req.session.user_id,
+            },
+          //   include: [
+          //     {
+          //       model: DreamTeam,
+          //     },
+          //   ],
+          }
+        ).catch((err) => { 
+            res.json(err);
+          });
+            const user = userData.map((blog) => blog.get({ plain: true }));
+            console.log('==================')
+            console.log(user)
+
+    
+            res.render('settings', { user, logged_in: req.session.logged_in, username: req.session.userName, });
+          });
 
 
 module.exports = router;
