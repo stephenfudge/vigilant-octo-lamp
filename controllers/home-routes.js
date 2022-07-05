@@ -49,7 +49,7 @@ router.get('/', async (req, res) => {
         console.log("======================")
         console.log(comments)
       // console.log(groupA)
-      res.render('homepage', { teams, comments, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, logged_in: req.session.logged_in});
+      res.render('homepage', { teams, comments, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, logged_in: req.session.logged_in, username: req.session.userName});
     });
 
     // router.get('/', async (req, res) => {
@@ -97,7 +97,7 @@ router.get('/country/:id', async (req, res) => {
     console.log(team);
     const countryComments = team.comments
 
-    res.render('singlecountry', { team, countryComments, logged_in: req.session.logged_in });
+    res.render('singlecountry', { team, countryComments, logged_in: req.session.logged_in, username: req.session.userName });
 
   } catch (err) {
     console.log(err);
@@ -138,6 +138,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.user_id = dbUserData.id;
+      req.session.userName = dbUserData.username;
 
       res.status(200).json(dbUserData);
     });
@@ -176,6 +177,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.user_id = dbUserData.id;
+      req.session.userName = dbUserData.username;
 
       res
         .status(200)
@@ -223,7 +225,7 @@ router.post('/comment', async (req, res) => {
         console.log('==================')
         console.log(dreamteam)
 
-        res.render('dreamteam', { dreamteam, logged_in: req.session.logged_in});
+        res.render('dreamteam', { dreamteam, logged_in: req.session.logged_in, username: req.session.userName});
       });
 
 router.post('/dreamteam', async (req, res) => {
@@ -259,7 +261,7 @@ router.post('/dreamteam', async (req, res) => {
       );
   
       const dreamteam = dbDreamteamData.get({ plain: true });
-      res.render('singledreamteam', { dreamteam, loggedIn: req.session.loggedIn });
+      res.render('singledreamteam', { dreamteam, logged_in: req.session.logged_in, username: req.session.userName });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);

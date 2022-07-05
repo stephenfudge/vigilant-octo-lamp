@@ -51,6 +51,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/dreamteam">Dream Team</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/settings">{{username}}'s Account</a>
+                    </li>
                     {{/if}}
                 </ul>
             </div>
@@ -58,7 +61,7 @@
             <div class="log-btn">
                 <form class="container-fluid log-btn">
                     {{#if logged_in}}
-
+                    
                     <a href="/homepage" class="text-white"><button type="button" class="btn btn-primary log-btn"
 
                             id="logout">Logout</a></button>
